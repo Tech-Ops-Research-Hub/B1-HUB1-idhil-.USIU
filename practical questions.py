@@ -60,6 +60,7 @@ class CircularQueue:
 
 
 #Modify the queue so that it can display its current front and rear elements without removing them.
+
 class CircularQueue:
     def __init__(self, size):
         self.queue = [None] * size
@@ -105,5 +106,48 @@ class CircularQueue:
         
         return self.queue[(self.rear - 1 + self.size) % self.size]
 
+
 #Write a function reverseQueue(queue) that reverses all elements of a queue using only standard queue operations.
+from collections import deque
+def reverseQueue(queue):
+    if not queue:
+        return"queue is empty"
+    stack = []
+    while queue:
+        stack.append(queue.popleft())
+    while stack:
+        queue.append(stack.pop())
+    return queue
+
 #Implement a queue with max size, where enqueue() raises an error if the queue is full.
+class MaxSizeQueue:
+    def __init__(self,max_size):
+
+        self.queue=deque()
+        self.max.size=max_size
+
+        def enqueue(self,item):
+            if len(self.queue)>=self.max_size:
+                raise Exception("Queue is full!")
+            self.queue.append(item)
+
+        def dequeue(self):
+            if not self.queue:
+                raise Exception("Queue is empty!")
+            return self.queue.popleft()
+        
+        def is_empty(self):
+            return not self.queue
+        
+        def size(self):
+            return len(self.queue)
+        
+        def display(self):
+            return list(self.queue)
+        
+        
+        
+
+
+
+        
