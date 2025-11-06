@@ -1,6 +1,6 @@
 #Implement a queue using only two stacks in Python or JavaScript.
 from collections import deque 
-class QuesUsingStacks:
+class QueueUsingStacks:
     def __init__(self):
         stack1 = deque()
         stack2 =deque()
